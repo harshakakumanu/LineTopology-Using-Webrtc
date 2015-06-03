@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1'>
+
+  <base target='_blank'>
+
+  <title>WebRTC client</title>
+  <style>
+    video{
+      width:200px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="username"/>
+  <button onclick="startConnection()">Start</button>
+  <h5>Username</h5>
+  <h5 id="usernameResult"></h5>
+  <button onclick="getusermedia()">getusermedia</button>
+  <button onclick="connect()">Connect</button>
+  <button onclick="addstream()">Broadcast Stream</button>
+  <!--<div id="result" style="height:200px;">-->
+  <!--</div>-->
+  <div id='container'>
+    <div id='videos'>
+      <video id='localVideo' autoplay muted></video>
+      <video id='remoteVideo' autoplay></video>
+    </div>
+  </div>
+  <input id="msg" type="text" placeholder="message"/>
+  <input id="to" type="text" placeholder="to"/>
+  <button onclick="sendText()">Send</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/script.js"></script>
+   <script src="/js/lib/adapter.js"></script>
+</body>
+
+</html>
